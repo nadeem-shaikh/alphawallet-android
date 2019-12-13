@@ -62,4 +62,12 @@
         <item name="textAllCaps">false</item>
     </style>
 
+    <style name="SettingsArrowStyle">
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:tint">@color/grey_8d</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:src">@drawable/ic_settings_greater_than</item>
+    </style>
+
 </resources>

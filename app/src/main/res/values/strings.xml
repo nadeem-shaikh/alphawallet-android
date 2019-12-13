@@ -610,4 +610,7 @@
     <string name="self">Self</string>
     <string name="ERC721T">ERC721T</string>
     <string name="fail_sign">Failed to sign redeem message</string>
+    <string name="settings_wallet">Wallet</string>
+    <string name="settings_system">System</string>
+    <string name="settings_support">Support</string>
 </resources>

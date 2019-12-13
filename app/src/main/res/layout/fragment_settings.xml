@@ -8,15 +8,15 @@
 
     <View
         android:id="@+id/top_bar"
-        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/onboarding_indicator_unselected"/>
+        android:layout_alignParentTop="true"
+        android:background="@color/onboarding_indicator_unselected" />
 
     <ScrollView
-        android:layout_below="@id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,6 +25,34 @@
             android:paddingBottom="15dp">
 
             <include layout="@layout/item_warning" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greye5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                android:background="@color/greyf6">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/font_light"
+                    android:text="@string/settings_wallet"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greye5" />
 
             <LinearLayout
                 android:id="@+id/layout_wallet_address"
@@ -37,8 +65,8 @@
                 <RelativeLayout
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -48,9 +76,10 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
@@ -66,15 +95,21 @@
                         android:id="@+id/wallets_subtext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:ellipsize="end"
                         android:fontFamily="@font/font_light"
                         android:lines="1"
                         android:maxLines="1"
-                        android:ellipsize="end"
-                        android:layout_marginRight="10dp"
                         android:text="@string/unknown_balance_without_symbol"
                         android:textColor="@color/black"
                         android:textSize="13sp" />
                 </LinearLayout>
+
+                <ImageView
+                    style="@style/SettingsArrowStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
 
             <View
@@ -82,7 +117,7 @@
                 android:layout_height="1dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/greye5"/>
+                android:background="@color/greye5" />
 
             <LinearLayout
                 android:id="@+id/layout_manage_wallets"
@@ -93,8 +128,8 @@
                 <RelativeLayout
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -104,13 +139,19 @@
                 </RelativeLayout>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
                     android:fontFamily="@font/font_light"
                     android:text="@string/toolbar_title_wallets"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
+
+                <ImageView
+                    style="@style/SettingsArrowStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -119,7 +160,7 @@
                 android:layout_height="1dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/greye5"/>
+                android:background="@color/greye5" />
 
             <LinearLayout
                 android:id="@+id/layout_backup_wallet"
@@ -132,8 +173,8 @@
                 <RelativeLayout
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -155,27 +196,27 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="10dp"
                     android:layout_gravity="center_vertical|right"
-                    android:gravity="center_horizontal">
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/image_backup_status"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical|right"
-                        android:src="@drawable/ic_green_bar"/>
+                        android:src="@drawable/ic_green_bar" />
 
                     <TextView
                         android:id="@+id/text_backup_status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textAllCaps="true"
+                        android:layout_gravity="center_horizontal"
                         android:text="100% Secure"
-                        android:textSize="10sp"
+                        android:textAllCaps="true"
                         android:textColor="@color/greyc2"
-                        android:layout_gravity="center_horizontal"/>
+                        android:textSize="10sp" />
 
                 </LinearLayout>
 
@@ -187,7 +228,36 @@
                 android:layout_height="1dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/greye5"/>
+                android:visibility="gone"
+                android:background="@color/greye5" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greye5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                android:background="@color/greyf6">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/font_light"
+                    android:text="@string/settings_system"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greye5" />
 
             <LinearLayout
                 android:id="@+id/layout_switch_network"
@@ -198,8 +268,8 @@
                 <RelativeLayout
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -209,9 +279,10 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
@@ -223,8 +294,13 @@
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 
-
                 </LinearLayout>
+
+                <ImageView
+                    style="@style/SettingsArrowStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
 
             <View
@@ -232,7 +308,7 @@
                 android:layout_height="1dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/greye5"/>
+                android:background="@color/greye5" />
 
             <LinearLayout
                 android:id="@+id/layout_locale_lang"
@@ -243,8 +319,8 @@
                 <RelativeLayout
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -254,9 +330,10 @@
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
@@ -277,6 +354,12 @@
                         android:textColor="@color/black"
                         android:textSize="13sp" />
                 </LinearLayout>
+
+                <ImageView
+                    style="@style/SettingsArrowStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
 
             <View
@@ -284,7 +367,7 @@
                 android:layout_height="1dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/greye5"/>
+                android:background="@color/greye5" />
 
             <LinearLayout
                 android:id="@+id/layout_notification_settings"
@@ -295,8 +378,8 @@
                 <RelativeLayout
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -324,8 +407,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        android:clickable="false"
                         android:layout_marginEnd="10dp"
+                        android:clickable="false"
                         android:text="" />
 
                 </RelativeLayout>
@@ -336,7 +419,7 @@
                 android:layout_height="1dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/greye5"/>
+                android:background="@color/greye5" />
 
             <LinearLayout
                 android:id="@+id/layout_help_faq"
@@ -347,8 +430,8 @@
                 <RelativeLayout
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -384,19 +467,40 @@
                 </RelativeLayout>
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greye5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                android:background="@color/greyf6">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/font_light"
+                    android:text="@string/settings_support"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greye5" />
+
             <LinearLayout
                 android:id="@+id/layout_telegram"
                 android:layout_width="match_parent"
                 android:layout_height="71dp"
-                android:orientation="vertical"
-                android:background="@drawable/selector_settings_item">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@color/greye5"/>
+                android:background="@drawable/selector_settings_item"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -406,38 +510,45 @@
 
                     <ImageView
                         android:layout_width="40dp"
-                        android:paddingStart="5dp"
-                        android:paddingEnd="5dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginEnd="10dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
                         android:src="@drawable/ic_telegram" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
                         android:fontFamily="@font/font_light"
                         android:text="@string/telegram"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 
+                    <ImageView
+                        style="@style/SettingsArrowStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
                 </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/layout_twitter"
                 android:layout_width="match_parent"
                 android:layout_height="71dp"
-                android:orientation="vertical"
-                android:background="@drawable/selector_settings_item">
+                android:background="@drawable/selector_settings_item"
+                android:orientation="vertical">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:background="@color/greye5"/>
+                    android:background="@color/greye5" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -447,21 +558,27 @@
 
                     <ImageView
                         android:layout_width="40dp"
-                        android:paddingStart="5dp"
-                        android:paddingEnd="5dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginEnd="10dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
                         android:src="@drawable/ic_twitter" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
                         android:fontFamily="@font/font_light"
                         android:text="@string/twitter"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
+
+                    <ImageView
+                        style="@style/SettingsArrowStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -470,15 +587,15 @@
                 android:id="@+id/layout_linkedin"
                 android:layout_width="match_parent"
                 android:layout_height="71dp"
-                android:orientation="vertical"
-                android:background="@drawable/selector_settings_item">
+                android:background="@drawable/selector_settings_item"
+                android:orientation="vertical">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:background="@color/greye5"/>
+                    android:background="@color/greye5" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -488,21 +605,27 @@
 
                     <ImageView
                         android:layout_width="40dp"
-                        android:paddingStart="5dp"
-                        android:paddingEnd="5dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginEnd="10dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
                         android:src="@drawable/ic_linkedin" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
                         android:fontFamily="@font/font_light"
                         android:text="@string/linkedin"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
+
+                    <ImageView
+                        style="@style/SettingsArrowStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -511,15 +634,15 @@
                 android:id="@+id/layout_facebook"
                 android:layout_width="match_parent"
                 android:layout_height="71dp"
-                android:orientation="vertical"
-                android:background="@drawable/selector_settings_item">
+                android:background="@drawable/selector_settings_item"
+                android:orientation="vertical">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:background="@color/greye5"/>
+                    android:background="@color/greye5" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -531,18 +654,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:minWidth="40dp"
                         android:layout_marginEnd="10dp"
+                        android:minWidth="40dp"
                         android:src="@drawable/ic_facebook" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
                         android:fontFamily="@font/font_light"
                         android:text="@string/facebook"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
+
+                    <ImageView
+                        style="@style/SettingsArrowStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -552,16 +681,16 @@
                 android:id="@+id/layout_xml_override"
                 android:layout_width="match_parent"
                 android:layout_height="71dp"
+                android:background="@drawable/selector_settings_item"
                 android:orientation="vertical"
-                android:visibility="gone"
-                android:background="@drawable/selector_settings_item">
+                android:visibility="gone">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:background="@color/greye5"/>
+                    android:background="@color/greye5" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -571,21 +700,27 @@
 
                     <ImageView
                         android:layout_width="40dp"
-                        android:paddingStart="5dp"
-                        android:paddingEnd="5dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginEnd="10dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
                         android:src="@drawable/ic_xml" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
                         android:fontFamily="@font/font_light"
                         android:text="@string/enable_xml_override_dir"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
+
+                    <ImageView
+                        style="@style/SettingsArrowStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
             </LinearLayout>
